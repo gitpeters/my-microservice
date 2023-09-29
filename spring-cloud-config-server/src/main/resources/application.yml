@@ -1,0 +1,11 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: "file:///C:/Users/Hp/Documents/Springboot projects/spring microservice by in28Minutes/git-localconfig-repo"

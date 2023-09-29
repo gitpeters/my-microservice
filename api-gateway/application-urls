@@ -1,0 +1,20 @@
+// Eureka
+http://localhost:8761/
+
+// currency exchange service - running on api gateway
+http://localhost:8765/currency-exchange/currency-exchange/from/USD/to/NGN
+
+// - running on localhost port
+http://localhost:8000/currency-exchange/from/USD/to/NGN
+
+// currency conversion service - running on api gateway
+http://localhost:8765/currency-conversion/currency-conversion/feign/from/NGN/to/CAD/quantity/10
+
+// - running on localhost port
+http://localhost:8100/currency-conversion/feign/from/NGN/to/CAD/quantity/10
+
+// running api gateway - with load balancing
+http://localhost:8765/currency-exchange/from/USD/to/NGN
+http://localhost:8765/currency-conversion/from/NGN/to/CAD/quantity/10
+http://localhost:8765/currency-conversion/feign/from/NGN/to/CAD/quantity/10
+http://localhost:8765/currency-conversion-new/from/NGN/to/CAD/quantity/10
