@@ -18,6 +18,7 @@ import java.util.HashMap;
 @RequestMapping("/currency-conversion")
 public class CurrencyConversionController {
     private final CurrencyExchangeProxy proxy;
+    private final RestTemplate restTemplate;
 
     @GetMapping("/from/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversion calculateCurrencyConversion(@PathVariable String from, @PathVariable String to, @PathVariable BigDecimal quantity){
@@ -25,8 +26,7 @@ public class CurrencyConversionController {
         uriVariables.put("from", from);
         uriVariables.put("to", to);
 
-        ResponseEntity<CurrencyConversion> responseEntity = new RestTemplate()
-                .getForEntity("http://localhost:8000/currency-exchange/from/{from}/to/{to}",
+        ResponseEntity<CurrencyConversion> responseEntity = restTemplate.getForEntity("http://localhost:8000/currency-exchange/from/{from}/to/{to}",
                         CurrencyConversion.class, uriVariables);
 
         CurrencyConversion retrievedCurrencyConversion = responseEntity.getBody();

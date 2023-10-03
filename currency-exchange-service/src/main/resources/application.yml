@@ -18,3 +18,33 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+# configure retry
+resilience4j:
+  retry:
+    instances:
+      sample-api:
+        maxAttempts: 5
+        waitDuration: 1s #set the interval between retry
+        enableExponentialBackOff: true # increases wait time by its exponential
+  #configure rate limiting
+  ratelimiter:
+    instances:
+      default:
+        limitForPeriod: 2
+        limitRefreshPeriod: 10s
+  #configure bulkhead
+  bulkhead:
+    instances:
+      sample-api:
+        maxConcurrentCalls: 10
+
+# configure tracing
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
