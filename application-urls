@@ -18,3 +18,8 @@ http://localhost:8765/currency-exchange/from/USD/to/NGN
 http://localhost:8765/currency-conversion/from/NGN/to/CAD/quantity/10
 http://localhost:8765/currency-conversion/feign/from/NGN/to/CAD/quantity/10
 http://localhost:8765/currency-conversion-new/from/NGN/to/CAD/quantity/10
+
+// docker images
+techiebroz/microservice-currency-exchange-service:0.0.1-SNAPSHOT
+techiebroz/microservice-currency-conversion-service:0.0.1-SNAPSHOT
+techiebroz/microservice-naming-server:0.0.1-SNAPSHOT
