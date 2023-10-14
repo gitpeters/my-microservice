@@ -1,0 +1,3 @@
+http://localhost:8000/currency-exchange/from/USD/to/NGN
+
+http://localhost:8100/currency-conversion/feign/from/NGN/to/CAD/quantity/10
