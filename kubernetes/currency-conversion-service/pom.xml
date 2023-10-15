@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.peters</groupId>
     <artifactId>currency-conversion-service</artifactId>
-    <version>0.0.2-SNAPSHOT</version><!-- KUBERNETES CHANGE -->
+    <version>0.0.3-SNAPSHOT</version><!-- KUBERNETES CHANGE -->
     <name>currency-conversion-service-kubernetes</name><!-- KUBERNETES CHANGE -->
     <description>Currency Conversion Service</description>
     <properties>
